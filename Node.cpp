@@ -6,7 +6,7 @@ using namespace std;
 
 Node::Node(int key){
     this->key = key;
-    height = 1;
+    height = 0;
     parent = NULL;
     childLeft = NULL;
     childRight = NULL;

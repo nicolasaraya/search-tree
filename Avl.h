@@ -14,8 +14,10 @@ class AVL{
         Node* createNode(int);
         bool isBalanced(Node*);
         void printPreOrder(Node*);
-        void leftRotate();
-        void rightRotate();
+        void LLRotate();
+        void RLRotate();
+        void RRRotate();
+        void LRRotate();
 
     public:
         ///     var         ///

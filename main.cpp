@@ -13,6 +13,9 @@ int main(int argc, char const *argv[]){
     _avl->insert(8);
     _avl->insert(12);
     _avl->insert(17);
+    _avl->insert(20);
+    _avl->insert(25);
+
 
 
 
