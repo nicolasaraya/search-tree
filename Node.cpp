@@ -1,15 +1,19 @@
 #include "Node.h"
 #include <iostream>
 
+
 using namespace std;
 
+//color true = red
+//color false = black
 
 Node::Node(int key){
     this->key = key;
-    height = 0;
+    height = 1;
     parent = NULL;
     childLeft = NULL;
     childRight = NULL;
+    color = RED;
 }
 
 Node::~Node(){
@@ -50,3 +54,12 @@ void Node::setChildLeft(Node* l){
 void Node::setChildRight(Node* r){
     childRight = r;
 }
+
+void Node::setColor(bool b){
+    color = b;
+}
+
+bool Node::getColor(){
+    return color;
+}
+

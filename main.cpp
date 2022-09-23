@@ -1,24 +1,29 @@
 #include <iostream>
 #include "Avl.h"
+#include "Rbt.h"
 
 using namespace std;
 
 int main(int argc, char const *argv[]){
+   
+    /*
     AVL* _avl = new AVL();
 
-    _avl->insert(10);
-    _avl->insert(5);
-    _avl->insert(15);
-    _avl->insert(3);
-    _avl->insert(8);
-    _avl->insert(12);
-    _avl->insert(17);
-    _avl->insert(20);
-    _avl->insert(25);
-
-
-
-
+    for(int i = 0; i < 30; i++){
+        _avl->insert(i);
+        //_avl->printAVL();
+    }
     _avl->printAVL();
+    */
+
+
+    RedBlackTree* rbt = new RedBlackTree();
+
+    for(int i = 0; i < 30; i++){
+        rbt->insert(i);
+    }
+    rbt->printRBT();
+    
+
     return 0;
 }
