@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #define REDCOLOR  "\x1B[31m"
+#define RESET "\x1B[0m"
+
 
 
 
@@ -94,7 +96,6 @@ void RedBlackTree::fix(Node* n){
                         parent = parent->getParent();
                     }
                     
-                    
                     rotateLeft(gParent);
                     bool aux = parent->getColor();
                     parent->setColor(gParent->getColor());
@@ -114,7 +115,7 @@ void RedBlackTree::printRBT(){
     while(actual.size() != 0){
         vector<Node*> next;
         for(int i = 0;i < actual.size(); i++){
-            if(actual.at(i)->getColor() == RED) printf(REDCOLOR "|%d|", actual.at(i)->getKey());
+            if(actual.at(i)->getColor() == RED) printf(REDCOLOR "|%d|" RESET, actual.at(i)->getKey());
             else cout << "|"<< actual.at(i)->getKey() <<"|";
             if(actual.at(i)->getChildLeft()!= NULL) next.push_back(actual.at(i)->getChildLeft());
             if(actual.at(i)->getChildRight()!= NULL) next.push_back(actual.at(i)->getChildRight());
