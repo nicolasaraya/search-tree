@@ -26,7 +26,7 @@ void RedBlackTree::deleteBST(Node* r){
 
 
 void RedBlackTree::insert(int key){
-    cout << key << endl;
+    //cout << key << endl;
     Node* aux = new Node(key);
     Node* tempParent = root;
     if(root == NULL){
@@ -191,9 +191,6 @@ void RedBlackTree::rotateRight(Node* n){
 
 
 Node* RedBlackTree::search(int key){
-    if(root->getKey() == key){
-        return root; 
-    }
     Node* aux = root; 
     while(aux->getKey() != key && aux != NULL){
         if(key < aux->getKey()){

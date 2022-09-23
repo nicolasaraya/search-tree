@@ -222,9 +222,6 @@ void AVL::remove(Node* n){
 }
 
 Node* AVL::search(int key){
-    if(root->getKey() == key){
-        return root; 
-    }
     Node* aux = root; 
     while(aux->getKey() != key && aux !=NULL){
         if(key < aux->getKey()){
