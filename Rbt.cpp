@@ -192,7 +192,7 @@ void RedBlackTree::rotateRight(Node* n){
 
 Node* RedBlackTree::search(int key){
     Node* aux = root; 
-    while(aux->getKey() != key && aux != NULL){
+    while(aux != NULL && aux->getKey() != key){
         if(key < aux->getKey()){
             aux = aux->getChildLeft();
         }

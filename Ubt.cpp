@@ -17,6 +17,7 @@ void UnbalancedTree::deleteBST(Node* r){
     deleteBST(b);
 }
 void UnbalancedTree::insert(int key){
+    //if(key%10000) std::cout << key <<std::endl;
     Node* aux = new Node(key);
     Node* tempParent = root;
     if(root == NULL){
@@ -52,7 +53,7 @@ void UnbalancedTree::insert(int key){
 
 Node* UnbalancedTree::search(int key){
     Node* aux = root; 
-    while(aux->getKey() != key && aux != NULL){
+    while(aux!= NULL && aux->getKey() != key ){
         if(key < aux->getKey()){
             aux = aux->getChildLeft();
         }

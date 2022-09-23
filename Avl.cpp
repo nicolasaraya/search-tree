@@ -52,7 +52,6 @@ void AVL::insert(int key){
             }
             else break;
         }
-
     }
     height(tempParent);
     balance(tempParent);
@@ -223,7 +222,7 @@ void AVL::remove(Node* n){
 
 Node* AVL::search(int key){
     Node* aux = root; 
-    while(aux->getKey() != key && aux !=NULL){
+    while(aux != NULL && aux->getKey() != key ){
         if(key < aux->getKey()){
             aux = aux->getChildLeft();
         }
