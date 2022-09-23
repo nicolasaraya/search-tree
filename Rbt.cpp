@@ -4,14 +4,26 @@
 #define REDCOLOR  "\x1B[31m"
 #define RESET "\x1B[0m"
 
-
-
-
 using namespace std; 
 
 RedBlackTree::RedBlackTree(){
     root = NULL;
 }
+
+RedBlackTree::~RedBlackTree(){
+    deleteBST(root);
+}  
+
+void RedBlackTree::deleteBST(Node* r){
+    if(r == NULL) return;
+    Node* a = r->getChildLeft();
+    Node* b = r->getChildRight();
+    delete r;
+    deleteBST(a);
+    deleteBST(b);
+}
+
+
 
 void RedBlackTree::insert(int key){
     cout << key << endl;
@@ -179,7 +191,19 @@ void RedBlackTree::rotateRight(Node* n){
 
 
 Node* RedBlackTree::search(int key){
-    return NULL;
+    if(root->getKey() == key){
+        return root; 
+    }
+    Node* aux = root; 
+    while(aux->getKey() != key && aux != NULL){
+        if(key < aux->getKey()){
+            aux = aux->getChildLeft();
+        }
+        else if(key > aux->getKey()){
+            aux = aux->getChildRight();
+        }
+    }
+    return aux; 
 }
 
 

@@ -226,7 +226,7 @@ Node* AVL::search(int key){
         return root; 
     }
     Node* aux = root; 
-    while(aux->getKey() != key){
+    while(aux->getKey() != key && aux !=NULL){
         if(key < aux->getKey()){
             aux = aux->getChildLeft();
         }
@@ -246,19 +246,7 @@ int AVL::balanceFactor(Node* n){
     return(left - right);
 }
 
-void AVL::printAVL(){
-    printPreOrder(root);
-    cout << endl; 
-}
-
-void AVL::printPreOrder(Node* r){
-    /*
-    if(r!=NULL){
-        cout << "|| " <<r->getKey() << ", " << r->getHeight() <<  "|| - ";
-        printPreOrder(r->getChildLeft());
-        printPreOrder(r->getChildRight());
-    }
-    */
+void AVL::printAVL(){    
     vector<Node*> actual;
     if(root != NULL) actual.push_back(root);
     while(actual.size() != 0){

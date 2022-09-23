@@ -14,6 +14,7 @@ class RedBlackTree{
         void fix(Node*);
         void rotateLeft(Node*);
         void rotateRight(Node*);
+        void deleteBST(Node*);
 
 };
 
